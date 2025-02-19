@@ -33,9 +33,6 @@ This project is an AI-powered system for detecting overspeeding vehicles using c
    ```
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
-   ```
-   ```bash
    npm install  # For backend dependencies
    ```
 3. Download the pre-trained model and place it in the appropriate directory (instructions in the repo).
