@@ -26,32 +26,54 @@ This project is an AI-powered system for detecting overspeeding vehicles using c
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Pranava-Pai-N/AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON.git
-   cd AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON
-   ```
-2. Install dependencies:
-   ```bash
-   npm install  # For backend dependencies
-   ```
-3. Download the pre-trained model and place it in the appropriate directory (instructions in the repo).
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Pranava-Pai-N/AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON.git
+cd AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON
+```
+
+### 2️⃣ Install Dependencies
+
+#### Frontend Setup (React + Vite)
+```bash
+cd frontend
+npm install  # Install frontend dependencies
+```
+
+#### Backend Setup (Node.js + Express)
+```bash
+cd backend
+npm install  # Install backend dependencies
+```
+
+#### Python Dependencies (For Detection & ANPR)
+If your project includes a Python-based AI model, install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## Usage
 
-### Run the Backend Server
-
+### 1️⃣ Run the Backend Server
 ```bash
+cd backend
 node server.js
 ```
+The backend will start on `http://localhost:5000`.
 
-The backend server will start on `http://localhost:5000`.
-
-### Run ANPR and Detection Script
-
-Run the detection script with a video input:
-
+### 2️⃣ Run the Frontend Dashboard
 ```bash
+cd frontend
+npm run dev
+```
+The frontend will start on `http://localhost:5173`.
+
+### 3️⃣ Run ANPR and Detection Script
+Run the AI-based detection script with a video input:
+```bash
+cd ml
 python anpr.py
 ```
 
