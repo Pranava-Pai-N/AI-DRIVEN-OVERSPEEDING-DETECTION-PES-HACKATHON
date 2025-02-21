@@ -21,7 +21,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/violations");
+        const response = await axios.get("http://localhost:5001/api/violations");
 
         // If data.violations is an array, calculate total cases and paid users
         const violations = response.data.violations || response.data || [];

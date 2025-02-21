@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/api/violations", (req, res) => {
-  const filePath = path.join(__dirname, "../detected_vehicles.json");
+  const filePath = path.join(__dirname, "../ml/detected_vehicles.json");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       res.status(500).json({ error: "Failed to read data" });
@@ -58,7 +58,7 @@ app.post("/send-payment-link", async (req, res) => {
 
   try {
     // Fetch vehicle violation details from external API
-    const response = await axios.get("http://localhost:5000/api/violations");
+    const response = await axios.get("http://localhost:5001/api/violations");
     const violations = response.data; // Assuming API returns an array of violations
 
     let violation = violations.find((v) => v.license_plate === number_plate);
@@ -89,4 +89,4 @@ app.post("/send-payment-link", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(5001, () => console.log("Server running on port 5001"));

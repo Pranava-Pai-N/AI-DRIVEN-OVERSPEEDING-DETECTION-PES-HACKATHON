@@ -1,0 +1,14 @@
+All Required Libraries for the project
+
+numpy
+opencv-python
+matplotlib
+pandas
+tensorflow
+torch
+ultralytics
+flask
+flask-cors
+requests
+twilio
+python-dotenv

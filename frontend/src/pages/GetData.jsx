@@ -8,7 +8,7 @@ function GetData() {
     const fetchViolations = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/violations"
+          "http://localhost:5001/api/violations"
         );
         setViolations(response.data); // Ensure response format matches expected state
       } catch (error) {

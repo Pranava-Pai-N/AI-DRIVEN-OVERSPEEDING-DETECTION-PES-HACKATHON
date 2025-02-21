@@ -19,7 +19,7 @@ function LoginPage() {
     e.preventDefault();
 
     // Hardcoded login check
-    if (formData.id === "123" && formData.password === "456") {
+    if (formData.id === "123456" && formData.password === "456") {
       toast.success("Successfully logged in!");
       setRedirect(true);
     } else {

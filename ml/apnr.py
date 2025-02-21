@@ -9,14 +9,15 @@ import os
 import random
 from ultralytics import solutions
 
-phNumber = {1: "9480054467", 2: "9113957151", 3: "7899955618", 4: "8217706129"}
+phNumber = {1: "1234567578", 2: "1002020213", 3: "4848292911", 4: "3849291022"}
 
 # Create folder for detected images
 output_folder = "detected_plates"
 os.makedirs(output_folder, exist_ok=True)
 
 # Load video
-VIDEO_PATH = "ml/2103099-uhd_3840_2160_30fps.mp4"
+VIDEO_PATH = r"C:\Users\HP\OneDrive\Documents\GitHub\ALL-PROJECTS\PES Hackathon\AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON\2103099-uhd_3840_2160_30fps.mp4"
+cap = cv2.VideoCapture(VIDEO_PATH)
 cap = cv2.VideoCapture(VIDEO_PATH)
 
 if not cap.isOpened():
@@ -81,8 +82,8 @@ frame_count = 0
 while cap.isOpened():
     current_time = time.time()
 
-    # Stop processing after 30 seconds
-    if current_time - start_time > 60:
+    # Stop processing after 60 seconds
+    if current_time - start_time > 45:
         break
 
     success, frame = cap.read()
@@ -155,4 +156,4 @@ if violations:
         json.dump(violations, json_file, indent=4)
     print("✅ Speed violation detection complete. Results saved in 'detected_vehicles.json'")
 else:
-    print("⚠ No speeding vehicles detected in 60 seconds.")
+    print("⚠ No speeding vehicles detected in 45 seconds.")
