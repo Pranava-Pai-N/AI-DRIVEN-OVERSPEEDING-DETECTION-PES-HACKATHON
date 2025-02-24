@@ -7,8 +7,7 @@ pandas
 tensorflow
 torch
 ultralytics
-flask
-flask-cors
-requests
+tesseract
 twilio
 python-dotenv
+
