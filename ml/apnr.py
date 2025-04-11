@@ -16,7 +16,7 @@ output_folder = "detected_plates"
 os.makedirs(output_folder, exist_ok=True)
 
 # Load video
-VIDEO_PATH = r"C:\Users\HP\OneDrive\Documents\GitHub\ALL-PROJECTS\PES Hackathon\AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON\2103099-uhd_3840_2160_30fps.mp4"
+VIDEO_PATH = r"C:\Users\HP\OneDrive\Documents\GitHub\ALL-PROJECTS\PES Hackathon - Github\AI-DRIVEN-OVERSPEEDING-DETECTION-PES-HACKATHON\2103099-uhd_3840_2160_30fps.mp4"
 cap = cv2.VideoCapture(VIDEO_PATH)
 cap = cv2.VideoCapture(VIDEO_PATH)
 
@@ -82,8 +82,8 @@ frame_count = 0
 while cap.isOpened():
     current_time = time.time()
 
-    # Stop processing after 60 seconds
-    if current_time - start_time > 45:
+    # Stop processing after 30 seconds
+    if current_time - start_time > 30:
         break
 
     success, frame = cap.read()
@@ -156,4 +156,4 @@ if violations:
         json.dump(violations, json_file, indent=4)
     print("✅ Speed violation detection complete. Results saved in 'detected_vehicles.json'")
 else:
-    print("⚠ No speeding vehicles detected in 45 seconds.")
+    print("⚠ No speeding vehicles detected in 30 seconds.")

@@ -19,7 +19,7 @@ function LoginPage() {
     e.preventDefault();
 
     // Hardcoded login check
-    if (formData.id === "123456" && formData.password === "456") {
+    if (formData.id === "challengers" && formData.password === "123") {
       toast.success("Successfully logged in!");
       setRedirect(true);
     } else {
@@ -43,14 +43,14 @@ function LoginPage() {
 
         {/* ID Input */}
         <div className="mb-4">
-          <label className="block text-gray-600 font-medium mb-2">ID</label>
+          <label className="block text-gray-600 font-medium mb-2">UserName</label>
           <input
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             type="text"
             name="id"
             value={formData.id}
             onChange={handleChange}
-            placeholder="Enter your ID"
+            placeholder="Enter your Name"
           />
         </div>
 
