@@ -1,5 +1,3 @@
-All Required Libraries for the project
-
 numpy
 opencv-python
 matplotlib
