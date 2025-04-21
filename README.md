@@ -93,11 +93,11 @@ python anpr.py
 
 ## Contributors
 
-- **[Pranava Pai N](https://github.com/Pranava-Pai-N)**
-- **[Ajith Goveas](https://github.com/AjithGoveas)**
-- **[Aadithya Nayak V](https://github.com/AadithyaNayakV)**
-- **[Karthik Acharya](https://github.com/karthik71005)**
-git
+- <img src="https://github.com/Pranava-Pai-N.png" alt="Pranava Pai N" width="30" height="30" style="border-radius: 50%;"> **[Pranava Pai N](https://github.com/Pranava-Pai-N)**
+- <img src="https://github.com/AjithGoveas.png" alt="Ajith Goveas" width="30" height="30" style="border-radius: 50%;"> **[Ajith Goveas](https://github.com/AjithGoveas)**
+- <img src="https://github.com/AadithyaNayakV.png" alt="Aadithya Nayak V" width="30" height="30" style="border-radius: 50%;"> **[Aadithya Nayak V](https://github.com/AadithyaNayakV)**
+- <img src="https://github.com/karthik71005.png" alt="Karthik Acharya" width="30" height="30" style="border-radius: 50%;"> **[Karthik Acharya](https://github.com/karthik71005)**
+
 
 ## License
 
