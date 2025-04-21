@@ -93,12 +93,13 @@ python anpr.py
 
 ## Contributors
 
-<p>
-  <img src="https://github.com/Pranava-Pai-N.png" alt="Pranava Pai N" width="30" height="30" style="border-radius: 50%; margin-right: 10px;">
-  <img src="https://github.com/AjithGoveas.png" alt="Ajith Goveas" width="30" height="30" style="border-radius: 50%; margin-right: 10px;">
-  <img src="https://github.com/AadithyaNayakV.png" alt="Aadithya Nayak V" width="30" height="30" style="border-radius: 50%; margin-right: 10px;">
-  <img src="https://github.com/karthik71005.png" alt="Karthik Acharya" width="30" height="30" style="border-radius: 50%;">
-</p>
+<div style="display: flex; gap: 10px;">
+  <img src="https://github.com/Pranava-Pai-N.png" alt="Pranava Pai N" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
+  <img src="https://github.com/AjithGoveas.png" alt="Ajith Goveas" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
+  <img src="https://github.com/AadithyaNayakV.png" alt="Aadithya Nayak V" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
+  <img src="https://github.com/karthik71005.png" alt="Karthik Acharya" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
+</div>
+
 
 
 
