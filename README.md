@@ -93,16 +93,10 @@ python anpr.py
 
 ## Contributors
 
-<div style="display: flex; gap: 10px;">
-  <img src="https://github.com/Pranava-Pai-N.png" alt="Pranava Pai N" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
-  <img src="https://github.com/AjithGoveas.png" alt="Ajith Goveas" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
-  <img src="https://github.com/AadithyaNayakV.png" alt="Aadithya Nayak V" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
-  <img src="https://github.com/karthik71005.png" alt="Karthik Acharya" width="30" height="30" style="border-radius: 50%; object-fit: cover;">
-</div>
-
-
-
-
+- **Pranav Pai N**
+- **Ajith Goveas**
+- **Aadithya Nayak V**
+- **Karthik Acharya**
 
 ## License
 
