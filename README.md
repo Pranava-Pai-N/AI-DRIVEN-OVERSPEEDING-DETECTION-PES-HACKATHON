@@ -93,10 +93,11 @@ python anpr.py
 
 ## Contributors
 
-- **Pranav Pai N**
-- **Ajith Goveas**
-- **Aadithya Nayak V**
-- **Karthik Acharya**
+- **[Pranava Pai N](https://github.com/Pranava-Pai-N)**
+- **[Ajith Goveas](https://github.com/AjithGoveas)**
+- **[Aadithya Nayak V](https://github.com/AadithyaNayakV)**
+- **[Karthik Acharya](https://github.com/karthik71005)**
+git
 
 ## License
 
