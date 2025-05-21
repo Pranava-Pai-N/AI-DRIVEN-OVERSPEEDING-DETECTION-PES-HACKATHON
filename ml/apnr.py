@@ -82,7 +82,6 @@ frame_count = 0
 while cap.isOpened():
     current_time = time.time()
 
-    # Stop processing after 30 seconds
     if current_time - start_time > 30:
         break
 
@@ -154,6 +153,6 @@ cv2.destroyAllWindows()
 if violations:
     with open("detected_vehicles.json", "w") as json_file:
         json.dump(violations, json_file, indent=4)
-    print("✅ Speed violation detection complete. Results saved in 'detected_vehicles.json'")
+    print("Speed violation detection complete. Results saved in 'detected_vehicles.json'")
 else:
-    print("⚠ No speeding vehicles detected in 30 seconds.")
+    print("No speeding vehicles detected in 30 seconds.")
