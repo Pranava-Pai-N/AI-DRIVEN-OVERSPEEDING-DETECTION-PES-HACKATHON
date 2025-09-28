@@ -27,8 +27,10 @@ if not cap.isOpened():
 # Get video properties
 w, h, fps = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)), int(cap.get(cv2.CAP_PROP_FPS))
 
+resized_w, resized_h = 1280, 720
+
 # Initialize VideoWriter
-video_writer = cv2.VideoWriter("speed_estimation.mp4", cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h))
+video_writer = cv2.VideoWriter("speed_estimation.mp4", cv2.VideoWriter_fourcc(*"mp4v"), fps, (resized_w, resized_h))
 
 # Frame Processing Interval
 FRAME_SKIP = 3  # Process every nth frame
@@ -38,8 +40,10 @@ start_time = time.time()
 
 # Initialize Speed Estimator
 speed_obj = solutions.SpeedEstimator(
-    region=[(0, 360), (2560, 360)],  
+    region=[(0, 288), (1280, 288)],  
     model="yolo11n.pt",
+    fps = fps,
+    meter_per_pixel = 0.5,
     show=False
 )
 
@@ -67,7 +71,7 @@ def detect_license_plates(gray, frame, speed):
         # Clean and validate plate text
         plate_text = "".join(e for e in plate_text if e.isalnum()).upper()
         
-        if plate_regex.match(plate_text) and speed > 5:  # Valid plate format & speed > 5
+        if plate_regex.match(plate_text) and speed > 1:  # Valid plate format & speed > 5
             image_path = os.path.join(output_folder, f"{plate_text}.jpg")
             cv2.imwrite(image_path, frame)
             
@@ -82,7 +86,7 @@ frame_count = 0
 while cap.isOpened():
     current_time = time.time()
 
-    if current_time - start_time > 30:
+    if current_time - start_time > 15:
         break
 
     success, frame = cap.read()
@@ -95,31 +99,28 @@ while cap.isOpened():
         continue
 
     # Resize frame for consistency
-    frame = cv2.resize(frame, (1280, 720))
+    frame = cv2.resize(frame, (resized_w, resized_h))
 
     # Convert to grayscale for plate detection
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Detect vehicle speed
-    speed_results = speed_obj.estimate_speed(frame)
+    results = speed_obj(frame)
 
-        # Ensure speed_results is a valid list or NumPy array
-    if isinstance(speed_results, (list, np.ndarray)) and len(speed_results) > 0:
-        # Convert speed_results to a list if it's a NumPy array
-        speed_values = np.array(speed_results).flatten().tolist()
-
-        # Filter out extreme values
-        filtered_speeds = [s for s in speed_values if 5 <= s <= 100]
-
-        # Get the median speed if valid speeds exist, else default to 0
-        speed_value = float(np.median(filtered_speeds)) if filtered_speeds else 0
+    speed_values = []
+    for track in speed_obj.tracks:
+        if isinstance(track, dict) and 'speed' in track:
+            speed_values.append(track['speed'])
+    
+    if speed_values:
+        speed_value = float(np.median(speed_values))
     else:
-        speed_value = 0  # Default if no speed is detected
-
+        speed_value = 0
+    
     print(f"Detected Speed: {speed_value} km/h")  # Debugging Info
 
     # Process plates in a separate thread if speed is above 5
-    if speed_value > 5:
+    if speed_value > 1:
         plate_thread = threading.Thread(target=detect_license_plates, args=(gray, frame, speed_value))
         threads.append(plate_thread)
         plate_thread.start()
